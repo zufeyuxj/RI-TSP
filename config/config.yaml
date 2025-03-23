@@ -1,0 +1,31 @@
+data_dir: 'data'
+preprocessed_dir: 'data/preprocessed'
+target_dir: 'data/save'
+model_path: 'google/flan-t5-small'
+model_size: 'small'
+teacher_model_path: 'google/flan-t5-xl' # Teacher大模型的路径
+label_list:  ['positive', 'negative', 'neutral'] # 分别对应下标0 1 2
+data_origin: False #用于在dataloader加载时是否获取原始数据
+is_raw: False
+#emb_dim: 300
+#output_channels: 100
+#speaker_emb_dims: 300
+#project_dims: 300
+max_length: 300
+batch_size: 8 #batch_size 原为64
+epoch_size: 20
+train_mode: random
+filters: [3,4,5]
+dropout: 0.5
+shuffle: True
+learning_rate: 1e-4
+bert_lr: 2e-4
+patience: 100
+max_grad_norm: 1.0
+warmup_proportion: 0.1
+gradient_accumulation_steps: 1
+adam_epsilon: 1e-8  #adamW的优化学习率
+warmup_steps: 0
+weight_decay: 0.01 #adamW中的权重指标
+seed: 42 #seed 原本为42
+
